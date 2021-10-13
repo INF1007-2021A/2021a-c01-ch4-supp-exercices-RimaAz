@@ -4,19 +4,30 @@
 import random
 
 def is_even_len(string):
-	return 0xDEADBEEF
+
+	return len(string)%2 ==0
+
 
 
 def get_num_char(string, char):
-	return 0xDEADBABE
+	compteur = 0
+	for i in string:
+		if i == char:
+			compteur +=1
+	return compteur
 
 
 def get_first_part_of_name(name):
-	return ""
+	first_name = name.split("-")[0]
+	reponse = first_name[0].upper()+ first_name[1:].lower()
+	return reponse
 
 
 def get_random_sentence(animals, adjectives, fruits):
-	return ""
+	choix_1=random.choice(animals)
+	choix_2 = random.choice(adjectives)
+	choix_3 = random.choice(fruits)
+	return (f"Aujourd’hui, j’ai vu un {choix_1} s’emparer d’un panier {choix_2} plein de {choix_3}.")
 
 
 if __name__ == "__main__":
